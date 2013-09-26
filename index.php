@@ -42,39 +42,6 @@ foreach($all as $album){
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //print_r((array)$all);die;
 echo "<pre>";
 print_r(iterator_to_array($all));die;

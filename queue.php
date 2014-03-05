@@ -2,10 +2,6 @@
 /**
  * 数据结构与算法（PHP实现） - 队列（Queue）。
  * 
- * @author 创想编程（TOPPHP.ORG）
- * @copyright Copyright (c) 2013 创想编程（TOPPHP.ORG） All Rights Reserved
- * @license http://www.opensource.org/licenses/mit-license.php MIT LICENSE
- * @version 1.0.0 - Build20130607
  */
 class Queue {
   /**
@@ -99,5 +95,3 @@ class Queue {
   }
 }
 ?>
-
-18310513013

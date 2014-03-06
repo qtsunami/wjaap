@@ -90,20 +90,6 @@ print_r($newArr);die;
 echo $str;die;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 die;
 for($i = 0; $i < 500; $i ++){
 	file_put_contents("coco.txt", $i+1 . '、' . rand(1000, 1000000) . "Hello World!\r\n", FILE_APPEND);

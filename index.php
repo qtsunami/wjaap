@@ -1,6 +1,6 @@
 <?php
 ini_set('open_basedir', dirname(__FILE__) . DIRECTORY_SEPARATOR);
-
+ 
 class fs
 {
 	protected $base = null;

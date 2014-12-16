@@ -18,12 +18,7 @@ for($i = 0; $i < $loopNum; $i ++){
 	echo $strMx . "<br>";
 }
 
-
-
-
-
 echo "Game Over!";
-
 die;
 /**
  * 测试手机验证正则

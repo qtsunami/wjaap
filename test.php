@@ -1,27 +1,39 @@
 <?php
+header('Content-Type:text/html;charset=utf-8');
+function farsinum($str)
+ {
+   $ret = "";
+   for ($i = 0; $i < strlen($str); ++$i) {
+         $c = $str[$i];
+         if( $c >= '0' && $c <= '9' )
+                 $out .= pack("C*", 0xDB, 0xB0 + $c);
+         else
+                 $ret .= $c;
+   }
+   return $ret;
+ } 
+
+ print_r(farsinum('he12356llo Worlssd '));die;
+
+// Strips the UTF-8 mark: (hex value: EF BB BF)
+ function trimUTF8BOM($data){ 
+	return pack('CCC', 239, 187, 191);
+    if(substr($data, 0, 3) == pack('CCC', 239, 187, 191)) {
+         return substr($data, 3);
+     }
+     return $data;
+ }
 
 
+$data = 'abcdessdf';
+var_dump(trimUTF8BOM($data));
+die;
 function microtime_float(){
 	list($usec, $sec) = explode(" ", microtime());
 	return ((float)$usec + (float)$sec);
 }
     $time_start = microtime_float();
 
-echo $time_start;die;
-echo date("Ymd");die;
-
-echo date("Y-m-d H:i:s", $time_start);
-
-	die;
-	sleep(5);
-
-$time_end = microtime_float();
-$time = $time_end - $time_start;
-
-echo "Did nothing in $time seconds\n";
-
-
-//echo $time;die;
 die;
 //IP
 
@@ -56,41 +68,3 @@ else
 
 echo $ip;die;
 
-
-
-
-
-
-
-
-
-
-die;
-
-if(file_exists('./coco.txt')){
-	unlink('./coco.txt');
-}
-
-
-for($i = 0; $i < 100000; $i ++){
-	file_put_contents("coco.txt", $i+1 . '、' . rand(1000, 1000000) . "Hello World!\r\n", FILE_APPEND);
-}
-
-
-$str = file_get_contents("coco.txt");
-
-$newArr = explode("\r\n", $str);
-
-array_pop($newArr);
-echo "<pre>";
-
-print_r($newArr);die;
-
-
-echo $str;die;
-
-
-die;
-for($i = 0; $i < 500; $i ++){
-	file_put_contents("coco.txt", $i+1 . '、' . rand(1000, 1000000) . "Hello World!\r\n", FILE_APPEND);
-}

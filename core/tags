@@ -1,0 +1,263 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags (PN2 Edition)	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.6	//
+ApiUrl	.\mxUploadApi.php	/^$ApiUrl    = 'http:\/\/www.example.com\/upload.php';$/;"	v
+DbMongo	.\DbMongo.php	/^class DbMongo {$/;"	c
+ExportXls	.\exportxls.php	/^class ExportXls{$/;"	c
+GetSMon	.\chianDate.php	/^    private function GetSMon($year,$month)$/;"	f
+Image	.\image.php	/^class Image{$/;"	c
+IsLeapYear	.\chianDate.php	/^    private function IsLeapYear($AYear){$/;"	f
+L2S	.\chianDate.php	/^    public function L2S($date,$type = 0)$/;"	f
+LDayName	.\chianDate.php	/^    private function LDayName($day)$/;"	f
+LMonName	.\chianDate.php	/^    private function LMonName($month)$/;"	f
+LYearName	.\chianDate.php	/^    private function LYearName($year)$/;"	f
+Larray	.\chianDate.php	/^            $Larray = $this->_LMDay[$Lyear - $this->_LStart];$/;"	v
+Larray	.\chianDate.php	/^        $Larray = $this->_LMDay[$year - $this->_LStart];$/;"	v
+Ldate	.\chianDate.php	/^        $Ldate = $Lyear."-".$Lmonth."-".$Lday;$/;"	v
+Ldate	.\chianDate.php	/^        $Ldate = $this->LYearName($Lyear)."年".$this->LMonName($Lmonth)."月".$this->LDayName($Lday);$/;"	v
+Lday	.\chianDate.php	/^                    $Lday = $days;$/;"	v
+Lday	.\chianDate.php	/^                $Lday = $Larray[11] - $days;$/;"	v
+Lday	.\chianDate.php	/^                $Lday = $Larray[12] - $days;$/;"	v
+Lmonth	.\chianDate.php	/^                    $Lmonth = $i;$/;"	v
+Lmonth	.\chianDate.php	/^                $Lmonth = 11;$/;"	v
+Lmonth	.\chianDate.php	/^                $Lmonth = 12;$/;"	v
+Ltype	.\chianDate.php	/^                        $Ltype = 1;$/;"	v
+Lunar	.\chianDate.php	/^class Lunar$/;"	c
+Lyear	.\chianDate.php	/^            $Lyear = $year - 1;$/;"	v
+Lyear	.\chianDate.php	/^            $Lyear = $year;$/;"	v
+MajorColor	.\colorlists.php	/^class MajorColor $/;"	c
+MongoDB	.\Mongodb.php	/^class MongoDB {$/;"	c
+Name	.\chianDate.php	/^            $Name = array( 1 =>$/;"	v
+Name	.\chianDate.php	/^            $Name = array( 1=>"正","二","三","四","五","六","七","八","九","十","十一","十二");$/;"	v
+Name	.\chianDate.php	/^        $Name = array("零","一","二","三","四","五","六","七","八","九");$/;"	v
+Page	.\PageHelper.php	/^class Page {$/;"	c
+Queue	.\queue.php	/^class Queue {$/;"	c
+S2L	.\chianDate.php	/^    public function S2L($date)$/;"	f
+Sday	.\chianDate.php	/^                    $Sday = $days;$/;"	v
+Sday	.\chianDate.php	/^                $Sday = $days - $this->_SMDay[1];$/;"	v
+Sday	.\chianDate.php	/^                $Sday = $days;$/;"	v
+Smonth	.\chianDate.php	/^                    $Smonth = $i;$/;"	v
+Smonth	.\chianDate.php	/^                $Smonth = 1;$/;"	v
+Smonth	.\chianDate.php	/^                $Smonth = 2;$/;"	v
+Syear	.\chianDate.php	/^            $Syear = $year +1;$/;"	v
+Syear	.\chianDate.php	/^            $Syear =$year;$/;"	v
+Timestamp	.\DbMongo.php	/^    public static function Timestamp($sec = null, $inc = 0)$/;"	f
+_LMDay	.\chianDate.php	/^    private  $_LMDay = array($/;"	v
+_LStart	.\chianDate.php	/^    private  $_LStart = 1950 ;\/\/农历从1950年开始$/;"	v
+_SMDay	.\chianDate.php	/^    private  $_SMDay = array(1 => 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);\/\/定义公历月分天数$/;"	v
+__construct	.\DbMongo.php	/^    public function __construct($params = array()) {$/;"	f
+__construct	.\PageHelper.php	/^	function __construct(){$/;"	f
+__construct	.\colorlists.php	/^    public function __construct(array $colors = null) { $/;"	f
+__construct	.\fileGen.php	/^	protected function __construct(){$/;"	f
+__construct	.\queue.php	/^  public function __construct() {$/;"	f
+__destruct	.\DbMongo.php	/^    public function __destruct() {$/;"	f
+__destruct	.\PageHelper.php	/^	function __destruct(){$/;"	f
+__destruct	.\fileGen.php	/^	public function __destruct() {$/;"	f
+_colors	.\colorlists.php	/^    protected $_colors = null; $/;"	v
+_dbLink	.\DbMongo.php	/^    protected $_dbLink = null;$/;"	v
+_defaultConfig	.\DbMongo.php	/^    protected $_defaultConfig = array($/;"	v
+_funcs	.\colorlists.php	/^    protected $_funcs = array('image\/png' => 'imagecreatefrompng', 'image\/jpeg' => 'imagecreatefromjpeg', 'image\/gif' => 'imagecreatefromgif'); $/;"	v
+_ignoreColors	.\colorlists.php	/^    protected $_ignoreColors = array(); $/;"	v
+_instance	.\DbMongo.php	/^    protected static $_instance = null;$/;"	v
+_isValidColor	.\colorlists.php	/^    public function _isValidColor($confVal, $val) { $/;"	f
+_mongo	.\DbMongo.php	/^    protected $_mongo = null;$/;"	v
+_tolerance	.\colorlists.php	/^    protected $_tolerance = 80; $/;"	v
+a	.\PageHelper.php	/^		$a=$this->construct_num_Page();$/;"	v
+abc	.\Mongodb.php	/^    public function abc(){$/;"	f
+alert	.\mxUploadApi.php	/^function alert($info = null) {$/;"	f
+allowExtArray	.\mxUploadApi.php	/^$allowExtArray = array('.jpg', '.gif', '.png', '.jpeg');$/;"	v
+allowMaxSize	.\mxUploadApi.php	/^$allowMaxSize  = 1024*1024*2;$/;"	v
+alpha	.\colorlists.php	/^                $alpha = $color_tran['alpha']; $/;"	v
+arr	.\colorlists.php	/^$arr = array($/;"	v
+bgcolor	.\image.class.php	/^		$bgcolor = imagecolorallocate($im,192,192,192);$/;"	v
+big	.\image.class.php	/^		$big = $this->imageSize($big_im,$image_path);$/;"	v
+big_im	.\image.class.php	/^		$big_im = getimagesize($image_path);		$/;"	v
+big_image	.\image.class.php	/^		$big_image = $big['src_createfunc']($image_path);$/;"	v
+ch	.\colorlists.php	/^    $ch=curl_init("http:\/\/translate.google.com\/translate_t?langpair=".urlencode($language)."&text=".urlencode($text));$/;"	v
+ch	.\mxUploadApi.php	/^	$ch = curl_init();$/;"	v
+collection	.\DbMongo.php	/^    public function collection($collection) {$/;"	f
+color_index	.\colorlists.php	/^                $color_index = imagecolorat($im, $i, $m); $/;"	v
+color_tran	.\colorlists.php	/^                $color_tran = imagecolorsforindex($im, $color_index); $/;"	v
+connect	.\exportxls.php	/^$connect = mysql_connect('localhost', 'root', '123456') or die('Connect Failed!');$/;"	v
+construct_num_Page	.\PageHelper.php	/^	function construct_num_Page(){$/;"	f
+content	.\mxUploadApi.php	/^	$content = curl_exec($ch);$/;"	v
+current_array	.\PageHelper.php	/^			$current_array=$this->initArray();$/;"	v
+current_array	.\PageHelper.php	/^			$current_array=array();$/;"	v
+cursor	.\DbMongo.php	/^        $cursor = $this->collection($collnections)->find($query, $fields);$/;"	v
+data	.\exportxls.php	/^$data = array();$/;"	v
+date1	.\chianDate.php	/^        $date1 = strtotime($year."-01-01");\/\/当年1月1日$/;"	v
+date2	.\chianDate.php	/^        $date2 = strtotime($year."-".$month."-".$day);$/;"	v
+days	.\chianDate.php	/^                        $days = $days - $Larray[13];$/;"	v
+days	.\chianDate.php	/^                $days = $days - $Larray[12];$/;"	v
+days	.\chianDate.php	/^            $days = $Larray[0] - $days;$/;"	v
+days	.\chianDate.php	/^            $days = $days - $Larray[0];$/;"	v
+days	.\chianDate.php	/^        $days = $day;$/;"	v
+days	.\chianDate.php	/^        $days=round(($date2-$date1)\/3600\/24);$/;"	v
+delete	.\DbMongo.php	/^    public function delete($collection, $query, $option=array("justOne"=>false)) {$/;"	f
+dequeue	.\queue.php	/^  public function dequeue() {$/;"	f
+detail	.\fileGen.php	/^	public function detail($floder){$/;"	f
+draw	.\colorlists.php	/^$draw  = new ImagickDraw();$/;"	v
+dst_x	.\image.class.php	/^				$dst_x = $big_im[0] - $small_im[0] - 5;$/;"	v
+dst_x	.\image.class.php	/^				$dst_x = ($big_im[0] - $small_im[0]) \/ 2;$/;"	v
+dst_x	.\image.class.php	/^				$dst_x = 5;$/;"	v
+dst_x	.\image.class.php	/^		$dst_x = 0;$/;"	v
+dst_x1	.\image.class.php	/^		$dst_x1 = 154;$/;"	v
+dst_y	.\image.class.php	/^				$dst_y = $big_im[1] - $small_im[1] - 5;$/;"	v
+dst_y	.\image.class.php	/^				$dst_y = ($big_im[1] - $small_im[1]) \/ 2;$/;"	v
+dst_y	.\image.class.php	/^				$dst_y = 5;$/;"	v
+dst_y	.\image.class.php	/^		$dst_y = 0;$/;"	v
+dst_y1	.\image.class.php	/^		$dst_y1 = 0;$/;"	v
+end	.\image.class.php	/^		$end = $type == 'LETTER' ? 51 : 61;$/;"	v
+enqueue	.\queue.php	/^  public function enqueue($data) {$/;"	f
+error	.\mxUploadApi.php	/^			$error = 'File upload stopped by extension。';$/;"	v
+error	.\mxUploadApi.php	/^			$error = '写文件到硬盘出错。';$/;"	v
+error	.\mxUploadApi.php	/^			$error = '图片只有部分被上传。';$/;"	v
+error	.\mxUploadApi.php	/^			$error = '找不到临时目录。';$/;"	v
+error	.\mxUploadApi.php	/^			$error = '未知错误。';$/;"	v
+error	.\mxUploadApi.php	/^			$error = '请选择图片。';$/;"	v
+error	.\mxUploadApi.php	/^			$error = '超过php.ini允许的大小。';$/;"	v
+error	.\mxUploadApi.php	/^			$error = '超过表单允许的大小。';$/;"	v
+excel	.\exportxls.php	/^$excel = new ExportXls();$/;"	v
+exports	.\exportxls.php	/^    public function exports($data = array(), $title = array(), $filename = "exports"){$/;"	f
+file	.\colorlists.php	/^$file = 'butterfly.jpg';$/;"	v
+fileData	.\mxUploadApi.php	/^$fileData  = array($/;"	v
+fileExtName	.\mxUploadApi.php	/^$fileExtName   = strtolower(strrchr($fileName, '.'));$/;"	v
+fileGen	.\fileGen.php	/^class fileGen {$/;"	c
+fileName	.\mxUploadApi.php	/^$fileName     = $_FILES['imgFile']['name'];$/;"	v
+fileSize	.\mxUploadApi.php	/^$fileSize     = $_FILES['imgFile']['size'];$/;"	v
+firstPageUrl	.\PageHelper.php	/^			$firstPageUrl=$this->subPage_link."1".'\/pageTotal:'.$this->pageNums;$/;"	v
+firstPageUrl	.\PageHelper.php	/^			$firstPageUrl=$this->subPage_link."1";$/;"	v
+floder	.\fileGen.php	/^	private function floder(){}$/;"	f
+fontcolor	.\image.class.php	/^		$fontcolor = imagecolorallocate($im,111,116,241);$/;"	v
+fontcolor	.\image.class.php	/^		$fontcolor = imagecolorallocate($image,26,136,136);$/;"	v
+fontfile	.\image.class.php	/^		$fontfile = '.\/simkai.ttf';$/;"	v
+front	.\queue.php	/^      $front = array_splice($this->queue, 0, 1);$/;"	v
+func	.\colorlists.php	/^        $func = isset($this->_funcs[$mime]) ? $this->_funcs[$mime] : null; $/;"	v
+getAll	.\DbMongo.php	/^    public function getAll($collnections, $query, $fields=array()) {$/;"	f
+getFront	.\queue.php	/^  public function getFront() {$/;"	f
+getInstance	.\DbMongo.php	/^    public static function getInstance($params = array()) {$/;"	f
+getInstance	.\Mongodb.php	/^    public static function getInstance($dns){$/;"	f
+getMajorColor	.\colorlists.php	/^    public function getMajorColor($pic) { $/;"	f
+getOne	.\DbMongo.php	/^    public function getOne($collnections, $query, $fields=array()) {$/;"	f
+getOrderedColors	.\colorlists.php	/^    public function getOrderedColors($pic) { $/;"	f
+getQueue	.\queue.php	/^  public function getQueue() {$/;"	f
+getSize	.\queue.php	/^  public function getSize() {$/;"	f
+gl	.\chianDate.php	/^$gl = date("Y-m-d",$lunar->L2S($nl));   $/;"	v
+gridFS	.\DbMongo.php	/^    public function gridFS($prefix = 'fs')$/;"	f
+height	.\colorlists.php	/^        $height = $size[1]; $/;"	v
+height	.\colorlists.php	/^    $height = min($count, $max) \/ $max * $size['height'];$/;"	v
+histogram	.\colorlists.php	/^$histogram = array_fill_keys(range(0, 255), 0);$/;"	v
+html	.\colorlists.php	/^    $html = "";$/;"	v
+html	.\colorlists.php	/^    $html=curl_exec($ch);$/;"	v
+id	.\DbMongo.php	/^    public static function id($id = null)$/;"	f
+im	.\colorlists.php	/^        $im = $func($pic); $/;"	v
+im	.\image.class.php	/^		$im = imagecreatetruecolor(308,256);$/;"	v
+im	.\image.class.php	/^		$im = imagecreatetruecolor(80,30);$/;"	v
+image	.\colorlists.php	/^$image = new Imagick($file);$/;"	v
+image	.\colorlists.php	/^$image = new Imagick();$/;"	v
+image	.\image.class.php	/^		$image = $imageform['src_createfunc']($image_path);$/;"	v
+image	.\image.class.php	/^$image = new imageSet();$/;"	v
+imageSave	.\image.class.php	/^	public function  imageSave($source_path,$save_width,$save_height,$save_path = null) {$/;"	f
+imageSet	.\image.class.php	/^class imageSet {$/;"	c
+imageSize	.\image.class.php	/^	function  imageSize($type,$source_path) {$/;"	f
+imageUrl	.\mxUploadApi.php	/^$imageUrl = $urlArray[array_rand($urlArray)] . '\/' . $result['data'];$/;"	v
+imageWater	.\image.class.php	/^	public function  imageWater($image_path,$water_path,$topath = null,$position) {$/;"	f
+image_path	.\image.class.php	/^$image_path = 'http:\/\/mxss.imoxiu.com.dev.moxiu.net\/preview\/540d2e053b3763e515818a417bc5dbd6a02ad223\/154';$/;"	v
+image_path	.\image.class.php	/^$image_path = 'images\/hehe.jpg';$/;"	v
+image_save	.\image.class.php	/^		$image_save = imagecreatetruecolor($save_width,$save_height);$/;"	v
+imageform	.\image.class.php	/^		$imageform = $this->imageSize($source_info,$image_path);$/;"	v
+initArray	.\PageHelper.php	/^	function initArray(){$/;"	f
+insert	.\DbMongo.php	/^    public function insert($collnections, $data) {$/;"	f
+isEmpty	.\queue.php	/^  public function isEmpty() {$/;"	f
+keys	.\colorlists.php	/^        $keys = array_keys($nums); $/;"	v
+lastPageUrl	.\PageHelper.php	/^			$lastPageUrl=$this->subPage_link.$this->pageNums.'\/pageTotal:'.$this->pageNums;$/;"	v
+lastPageUrl	.\PageHelper.php	/^			$lastPageUrl=$this->subPage_link.$this->pageNums;$/;"	v
+linecolor	.\image.class.php	/^		$linecolor = imagecolorallocate($im,mt_rand(0,255),mt_rand(0,255),mt_rand(0,255));$/;"	v
+lunar	.\chianDate.php	/^$lunar = new Lunar();$/;"	v
+max	.\colorlists.php	/^    $max = $threshold;$/;"	v
+max	.\colorlists.php	/^$max = max($histogram);$/;"	v
+mime	.\colorlists.php	/^        $mime = $size['mime']; $/;"	v
+newArray	.\colorlists.php	/^$newArray = array();$/;"	v
+nextPageUrl	.\PageHelper.php	/^			$nextPageUrl=$this->subPage_link.($this->current_page+1).'\/pageTotal:'.$this->pageNums;$/;"	v
+nextPageUrl	.\PageHelper.php	/^			$nextPageUrl=$this->subPage_link.($this->current_page+1);$/;"	v
+nl	.\chianDate.php	/^$nl = $lunar->S2L($today);\/\/date("Y-m-d",$lunar->S2L($today));$/;"	v
+nums	.\colorlists.php	/^        $nums = $this->getOrderedColors($pic); $/;"	v
+nums	.\colorlists.php	/^        $nums = array(); $/;"	v
+org_height	.\image.class.php	/^		$org_height = $source[1];$/;"	v
+org_width	.\image.class.php	/^		$org_width = $source[0];$/;"	v
+page_array	.\PageHelper.php	/^	private  $page_array = array();\/\/用来构造分页的数组$/;"	v
+params	.\DbMongo.php	/^        $params = is_array($params) ? $params + $this->_defaultConfig : $this->_defaultConfig;$/;"	v
+pixelcolor	.\image.class.php	/^			$pixelcolor = imagecolorallocate($im,mt_rand(0,255),mt_rand(0,255),mt_rand(0,255));$/;"	v
+position	.\image.class.php	/^	function  position($big_im,$small_im,$position = 1) {$/;"	f
+postRequest	.\mxUploadApi.php	/^function postRequest($url, $data = array(), $proxy = null, $expire = 30) {$/;"	f
+prewPageUrl	.\PageHelper.php	/^			$prewPageUrl=$this->subPage_link.($this->current_page-1).'\/pageTotal:'.$this->pageNums;$/;"	v
+prewPageUrl	.\PageHelper.php	/^			$prewPageUrl=$this->subPage_link.($this->current_page-1);$/;"	v
+red	.\colorlists.php	/^$red = 255; $green = 255; $blue = 255;$/;"	v
+result	.\DbMongo.php	/^        $result = array();$/;"	v
+result	.\exportxls.php	/^$result = mysql_query($sql);$/;"	v
+result	.\mxUploadApi.php	/^	$result            = array();$/;"	v
+result	.\mxUploadApi.php	/^$result    = postRequest($ApiUrl, $fileData);$/;"	v
+result	.\mxUploadApi.php	/^$result    = unserialize($result);$/;"	v
+rgb	.\colorlists.php	/^    $rgb = $pixel->getColor();$/;"	v
+s	.\PageHelper.php	/^			$s=$a[$i];$/;"	v
+save_height	.\image.class.php	/^			$save_height = $save_width * ($src_height\/$src_width);$/;"	v
+save_width	.\image.class.php	/^			$save_width = $save_height * ($src_width\/$src_height);$/;"	v
+sec	.\DbMongo.php	/^            $sec = time();$/;"	v
+serverTempFile	.\mxUploadApi.php	/^$serverTempFile = sys_get_temp_dir() . '\/' . md5(uniqid());$/;"	v
+setColors	.\colorlists.php	/^    public function setColors(array $colors) { $/;"	f
+setIgnoreColors	.\colorlists.php	/^    public function setIgnoreColors($colors) { $/;"	f
+setTolerance	.\colorlists.php	/^    public function setTolerance($tolerance) { $/;"	f
+show	.\PageHelper.php	/^	function show($each_disNums,$nums,$current_page,$sub_pages,$subPage_link,$subPage_type){$/;"	f
+show_SubPages	.\PageHelper.php	/^	function show_SubPages($subPage_type){$/;"	f
+single	.\fileGen.php	/^	public static function single(){$/;"	f
+size	.\colorlists.php	/^        $size = getimagesize($pic); $/;"	v
+size	.\colorlists.php	/^$size = array($/;"	v
+small	.\image.class.php	/^		$small = $this->imageSize($small_im,$water_path);$/;"	v
+small_im	.\image.class.php	/^		$small_im = getimagesize($water_path);$/;"	v
+sml_image	.\image.class.php	/^		$sml_image = $small['src_createfunc']($water_path);$/;"	v
+source	.\image.class.php	/^		$source = $this->imageSize($source_info,$source_path);$/;"	v
+source_file	.\image.class.php	/^		$source_file = $source['src_createfunc']($source_path);$/;"	v
+source_info	.\image.class.php	/^		$source_info = getimagesize($image_path);$/;"	v
+source_info	.\image.class.php	/^		$source_info = getimagesize($source_path);$/;"	v
+sql	.\exportxls.php	/^$sql = "select * from zzcms_botlist";$/;"	v
+src_createfunc	.\image.class.php	/^			$src_createfunc = 'imagecreatefromgif';$/;"	v
+src_createfunc	.\image.class.php	/^			$src_createfunc = 'imagecreatefromjpeg';$/;"	v
+src_createfunc	.\image.class.php	/^			$src_createfunc = 'imagecreatefrompng';$/;"	v
+src_height	.\image.class.php	/^		$src_height = $source_info[1];$/;"	v
+src_loadfunc	.\image.class.php	/^			$src_loadfunc = 'imagegif';$/;"	v
+src_loadfunc	.\image.class.php	/^			$src_loadfunc = 'imagejpeg';$/;"	v
+src_loadfunc	.\image.class.php	/^			$src_loadfunc = 'imagepng';$/;"	v
+src_width	.\image.class.php	/^		$src_width = $source_info[0];$/;"	v
+ssl	.\mxUploadApi.php	/^	$ssl = strtolower(substr($url, 0, 8)) == 'https:\/\/' ? true : false;$/;"	v
+start	.\image.class.php	/^		$start = $type == 'NUMBER' ? 52 : 0;$/;"	v
+str	.\image.class.php	/^		$str = '';$/;"	v
+str_rand	.\image.class.php	/^		$str_rand = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';$/;"	v
+subPageCss1	.\PageHelper.php	/^	function subPageCss1(){$/;"	f
+subPageCss1Str	.\PageHelper.php	/^		$subPageCss1Str="";$/;"	v
+subPageCss2	.\PageHelper.php	/^	function subPageCss2(){$/;"	f
+subPageCss2Str	.\PageHelper.php	/^		$subPageCss2Str="";$/;"	v
+subPageCss3	.\PageHelper.php	/^	function subPageCss3(){$/;"	f
+subPageCss3Str	.\PageHelper.php	/^		$subPageCss3Str="";$/;"	v
+subPageCss4	.\PageHelper.php	/^	function subPageCss4(){$/;"	f
+subPageCss4Str	.\PageHelper.php	/^		$subPageCss4Str="";$/;"	v
+textWater	.\image.class.php	/^	public function  textWater($image_path,$fontfile='simkai.ttf',$txt) {$/;"	f
+threshold	.\colorlists.php	/^$threshold = ($image->getImageWidth() * $image->getImageHeight()) \/ 256 * 12;$/;"	v
+title	.\exportxls.php	/^            $title= implode("\\t", $title);$/;"	v
+title	.\exportxls.php	/^$title = array('id', 'name', 'age');$/;"	v
+tmpFile	.\mxUploadApi.php	/^$tmpFile      = $_FILES['imgFile']['tmp_name'];$/;"	v
+today	.\chianDate.php	/^$today = date("Y-m-d");$/;"	v
+total	.\colorlists.php	/^        $total = $width * $height; $/;"	v
+translate	.\colorlists.php	/^function translate($text,$language='zh-cn|en'){$/;"	f
+txt	.\image.class.php	/^$txt = '从头再来，人定胜天';$/;"	v
+update	.\DbMongo.php	/^    public function update($collection, $query, $data, $options=array('safe'=>true,'multiple'=>true)) {$/;"	f
+url	.\PageHelper.php	/^				$url=$this->subPage_link.$s.'\/pageTotal:'.$this->pageNums;$/;"	v
+url	.\PageHelper.php	/^				$url=$this->subPage_link.$s;$/;"	v
+urlArray	.\mxUploadApi.php	/^$urlArray  = array($/;"	v
+verity	.\image.class.php	/^	public function  verity($len = 4,$type = 'ALL') {$/;"	f
+water_path	.\image.class.php	/^$water_path = 'http:\/\/mxss.imoxiu.com.dev.moxiu.net\/preview\/557436b6c7355df6232c847624d38a5cee71490b\/154';$/;"	v
+width	.\colorlists.php	/^        $width = $size[0]; $/;"	v
+x	.\colorlists.php	/^        $x=explode("<\/span><\/span><\/div><\/div>",$html);$/;"	v
+x	.\colorlists.php	/^        $x=explode("onmouseout=\\"this.style.backgroundColor='#fff'\\">",$x[0]);$/;"	v

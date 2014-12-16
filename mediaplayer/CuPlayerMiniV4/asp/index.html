@@ -1,0 +1,307 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>网页MP4播放器酷播迷你CuPlayerMiniV4(免费版)下载</title>
+<meta name="keywords" content="网页MP4播放器酷播迷你CuPlayerMiniV4(免费版),免费flv网页视频播放器" />
+<meta name="description" content="网页MP4播放器酷播迷你1.重写播放器基础架构；2.修改播放器双击全屏功能；3.修改显示视频略缩图功能；4.支持flv,mp4,mov,f4v,3gp等视频格式；5.新增配置文件功能，此功能将实现与asp,php,jsp,aspx程序更完美的结合；6.支持双重参数功能；7.更加人性化的播放体验" />
+<link rel="shortcut icon" href="/favicon.ico" >
+<link rel="stylesheet" type="text/css" href="http://www.52player.com/Demos/Images/common.css">
+<link rel="stylesheet" type="text/css" href="http://www.52player.com/Demos/Images/style.css">
+</head>
+<body>
+<!--header/begin-->
+<div id="header">
+<div class="subnav">
+<p class="sublogo"><a href="http://www.52player.com/" target="_blank"><img src="http://www.52player.com/Demos/Images/Culogo.gif" alt="进入我爱播放器官方网站www.52player.com" width="160" height="40" border="0" /></a></p>
+<p class="sublink"><a href="http://www.52player.com/Top/" target="_blank" >下载排行榜</a> <a href="http://www.52player.com/WebPlayer/">网页播放器</a> <a href="http://www.52player.com/MusicPlayer/">音乐播放器</a> <a href="http://www.52player.com/VideoPlayer/">视频播放器</a></p>
+</div>
+</div>
+<!--header/end-->
+
+<!--maincontent/begin-->
+<div class="maincontent">
+<div style="margin-top:30px;">
+  <fieldset>
+    <legend><strong class="f14">播放器介绍</strong></legend>
+    <div>
+      <div>
+        <div>
+          <table width="922" border="0">
+            <tr>
+              <td width="484"><p><strong>酷播迷你CuPlayerMiniV4.1&nbsp; 重要功能更新说明( 2013-7-5更新 )：</strong><br />
+                1. 重写播放器基础架构；<br />
+                2. 修改播放器双击全屏功能；<br />
+                3. 修改显示视频略缩图功能；<br />
+                4. 支持自定义用户logo功能；<br />
+                5. 支持flv,mp4,mov,f4v,3gp等视频格式；<br />
+                6. 优化视频比例问题；<br />
+                7. 新增配置文件功能，此功能将实现与asp,php,jsp,aspx程序更完美的结合；<br />
+                8. 支持双重参数功能，可适合普通用户和程序人员使用；<br />
+                9. 更加人性化的播放体验； <br />
+                10. 支持FlashVars调用html代码中的参数；<br />
+                11. 支持自动播放/点击播放；<br />
+                12. 显示播放进度条，带预加载，支持拖动播放进度条；<br />
+                13. 显示视频总时长和当前播放进度的位置时间；<br />
+                14. 支持音量控制；<br />
+                15. 支持列表连播参数getNext，调用时直接在html中添加js的getNext函数即可； <br />
+                16. 可以与动易、织梦、帝国等各类CMS系统结合，实现与此类CMS系统后台的融合</p></td>
+              <td width="428">
+              <!--酷播迷你CuPlayerMiniV4.0/代码开始-->
+<script type="text/javascript" src="images/swfobject.js"></script>
+<div class="video" id="CuPlayer" style="950px;margin:0 auto;">
+	<strong>我爱播放器(52player.com) 提示：您的Flash Player版本过低，请<a href="http://www.52player.com/">点此进行网页播放器升级</a>！</strong></div>
+<script type="text/javascript">
+var so = new SWFObject("CuPlayerMiniV4.swf","CuPlayerV4","450","300","9","#000000");
+so.addParam("allowfullscreen","true");
+so.addParam("allowscriptaccess","always");
+so.addParam("wmode","opaque");
+so.addParam("quality","high");
+so.addParam("salign","lt");
+so.addVariable("CuPlayerSetFile","CuPlayerSetFile.asp"); //播放器配置文件地址
+so.addVariable("CuPlayerFile","test.mp4"); //视频文件地址
+so.addVariable("CuPlayerImage","images/start.jpg");//视频略缩图
+so.addVariable("CuPlayerWidth","450"); //视频宽度
+so.addVariable("CuPlayerHeight","300"); //视频高度
+so.addVariable("CuPlayerAutoPlay","no"); //是否自动播放
+so.write("CuPlayer");
+</script>
+<!--酷播迷你CuPlayerMiniV4.0/代码结束-->
+<h1>酷播迷你CuPlayerMiniV4(免费版)</h1></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</div>
+<!--line-->
+<div style="margin-top:30px;">
+<fieldset>
+<legend><h4>播放器参数介绍</h4>
+</legend>
+  <div>
+    <div>
+      <div>
+        <table cellpadding="4" cellspacing="1" bgcolor="#dddddd" border="0" width="832">
+          <tbody>
+            <tr class="cGray">
+              <td bgcolor="#fafafa" width="149"><strong>参数名称</strong></td>
+              <td bgcolor="#fafafa" width="74"><strong>数据类型</strong></td>
+              <td bgcolor="#fafafa" width="135"><strong>参数描述</strong></td>
+              <td bgcolor="#fafafa" width="437"><strong>备注</strong></td>
+            </tr>
+            <tr>
+              <td bgcolor="#FFFFFF"><strong>CuPlayerSetFile</strong></td>
+              <td bgcolor="#FFFFFF">String</td>
+              <td bgcolor="#FFFFFF">配置文件地址</td>
+              <td bgcolor="#FFFFFF">支持 .xml / .asp / .php / .aspx /. jsp 格式配置文件</td>
+            </tr>
+            <tr>
+              <td bgcolor="#FFFFFF"><strong>CuPlayerFile</strong></td>
+              <td bgcolor="#FFFFFF">String</td>
+              <td bgcolor="#FFFFFF">视频文件地址</td>
+              <td bgcolor="#FFFFFF">支持flv,mp4,mov,f4v,3gp格式视频文件</td>
+            </tr>
+            <tr>
+              <td bgcolor="#FFFFFF"><strong>CuPlayerImage</strong></td>
+              <td bgcolor="#FFFFFF">String</td>
+              <td bgcolor="#FFFFFF">视频缩图 </td>
+              <td bgcolor="#FFFFFF">支持jpg,png,gif , 必须存在,否则将影响正常播放</td>
+            </tr>
+            <tr>
+              <td bgcolor="#FFFFFF"><strong>CuPlayerWidth</strong></td>
+              <td bgcolor="#FFFFFF">Number</td>
+              <td bgcolor="#FFFFFF">播放器宽度</td>
+              <td bgcolor="#FFFFFF">宽度值为像素</td>
+            </tr>
+            <tr>
+              <td bgcolor="#FFFFFF"><strong>CuPlayerHeight</strong></td>
+              <td bgcolor="#FFFFFF">Number</td>
+              <td bgcolor="#FFFFFF">播放器高度</td>
+              <td bgcolor="#FFFFFF">宽度值为像素</td>
+            </tr>
+            <tr>
+              <td bgcolor="#FFFFFF"><strong>CuPlayerAutoPlay</strong></td>
+              <td bgcolor="#FFFFFF">String</td>
+              <td bgcolor="#FFFFFF">是否自动播放</td>
+              <td bgcolor="#FFFFFF">值为yes / no</td>
+            </tr>
+            <tr>
+              <td bgcolor="#FFFFFF"><strong>CuPlayerLogo</strong></td>
+              <td bgcolor="#FFFFFF">String</td>
+              <td bgcolor="#FFFFFF">用户Logo文件地址</td>
+              <td bgcolor="#FFFFFF">推荐.png，支持jpg,png,gif</td>
+            </tr>
+            <tr>
+              <td bgcolor="#FFFFFF"><strong>CuPlayerPosition</strong></td>
+              <td bgcolor="#FFFFFF">String</td>
+              <td bgcolor="#FFFFFF">用户Logo显示的位置</td>
+              <td bgcolor="#FFFFFF">值为top-right / top-left / bottom-left / bottom-right 右上角/左上角/左下角/右下角</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</fieldset>
+</div>
+<!--line-->
+<div style="margin-top:30px;">
+<fieldset>
+<legend><h4>使用示例<span class="cRed2">(提示：请在IIS下或其它网站环境下测试)</span></h4>
+</legend>
+<div>
+<ul class="list14">
+<li><a href="demo1.html" target="_blank" class="cBlue2">使用演示demo1.html</a></li>
+<li><a href="demo2.html" target="_blank" class="cBlue2">使用演示demo2.html</a></li>
+<li><a href="demo3.html" target="_blank" class="cBlue2">使用演示demo3.html</a></li>
+<li><a href="demo4.html" target="_blank" class="cBlue2">使用演示demo4.html</a></li>
+</ul>
+  </div>
+</fieldset>
+</div>
+
+<!--line-->
+<div style="margin-top:30px;">
+  <fieldset>
+    <h4>播放器使用示例1 ( <strong><span ><a href="demo1.html" class="cBlue2">demo1.html</a></span></strong> ) <br />
+      <span class="green">说明：读取HTML参数</span>    <span class="green">(完整的写法示例)</span></h4>
+    <p class="code">&lt;!-- 我爱播放器(52player.com)/代码开始 --&gt;<br />
+      &lt;script type=&quot;text/javascript&quot; src=&quot;<strong>images/swfobject.js</strong>&quot;&gt;&lt;/script&gt;<br />
+      &lt;div class=&quot;video&quot; id=&quot;<strong>CuPlayer</strong>&quot;&gt;<br />
+&lt;strong&gt;我爱播放器(52player.com) 提示：您的Flash Player版本过低，请&lt;a href=&quot;http://www.52player.com/&quot;&gt;点此进行网页播放器升级&lt;/a&gt;！&lt;/strong&gt;&lt;/div&gt;<br />
+&lt;script type=&quot;text/javascript&quot;&gt;<br />
+var so = new SWFObject(&quot;<strong>CuPlayerMiniV4.swf</strong>&quot;,&quot;CuPlayerV4&quot;,&quot;600&quot;,&quot;410&quot;,&quot;9&quot;,&quot;#000000&quot;);<br />
+so.addParam(&quot;allowfullscreen&quot;,&quot;true&quot;);<br />
+so.addParam(&quot;allowscriptaccess&quot;,&quot;always&quot;);<br />
+so.addParam(&quot;wmode&quot;,&quot;opaque&quot;);<br />
+so.addParam(&quot;quality&quot;,&quot;high&quot;);<br />
+so.addParam(&quot;salign&quot;,&quot;lt&quot;);<br />
+so.addVariable(&quot;<strong>CuPlayerSetFile</strong>&quot;,&quot;CuPlayerSetFile.xml&quot;); //播放器配置文件地址,例SetFile.xml、SetFile.asp、SetFile.php、SetFile.aspx<br />
+so.addVariable(&quot;<strong>CuPlayerFile</strong>&quot;,&quot;test.mp4&quot;); //视频文件地址<br />
+so.addVariable(&quot;<strong>CuPlayerImage</strong>&quot;,&quot;images/start.jpg&quot;);//视频略缩图,本图片文件必须正确<br />
+so.addVariable(&quot;<strong>CuPlayerWidth</strong>&quot;,&quot;600&quot;); //视频宽度<br />
+so.addVariable(&quot;<strong>CuPlayerHeight</strong>&quot;,&quot;410&quot;); //视频高度<br />
+so.addVariable(&quot;<strong>CuPlayerAutoPlay</strong>&quot;,&quot;yes&quot;); //是否自动播放<br />
+so.addVariable(&quot;<strong>CuPlayerLogo</strong>&quot;,&quot;logo.png&quot;); //Logo文件地址<br />
+so.addVariable(&quot;<strong>CuPlayerPosition</strong>&quot;,&quot;bottom-right&quot;); //Logo显示的位置<br />
+so.write(&quot;<strong>CuPlayer</strong>&quot;);<br />
+&lt;/script&gt;<br />
+      &lt;!-- 我爱播放器(52player.com)/代码结束 --&gt;</p>
+  </fieldset>
+</div> 
+<!--line-->
+<div style="margin-top:30px;">
+  <fieldset>
+    <h4>播放器使用示例2 ( <strong><span ><a href="demo2.html" class="cBlue2">demo2.html</a></span></strong> ) <br />
+      <span class="green">说明：直接读取配置文件中的参数</span><br />
+    </h4>
+    <p class="code">&lt;!-- 我爱播放器(52player.com)/代码开始 --&gt;<br />
+      &lt;script type=&quot;text/javascript&quot; src=&quot;<strong>images/swfobject.js</strong>&quot;&gt;&lt;/script&gt;<br />
+      &lt;div class=&quot;video&quot; id=&quot;<strong>CuPlayer</strong>&quot;&gt;<br />
+&lt;strong&gt;我爱播放器(52player.com) 提示：您的Flash Player版本过低，请&lt;a href=&quot;http://www.52player.com/&quot;&gt;点此进行网页播放器升级&lt;/a&gt;！&lt;/strong&gt;&lt;/div&gt;<br />
+&lt;script type=&quot;text/javascript&quot;&gt;<br />
+var so = new SWFObject(&quot;<strong>CuPlayerMiniV4.swf</strong>&quot;,&quot;CuPlayerV4&quot;,&quot;600&quot;,&quot;410&quot;,&quot;9&quot;,&quot;#000000&quot;);<br />
+so.addParam(&quot;allowfullscreen&quot;,&quot;true&quot;);<br />
+so.addParam(&quot;allowscriptaccess&quot;,&quot;always&quot;);<br />
+so.addParam(&quot;wmode&quot;,&quot;opaque&quot;);<br />
+so.addParam(&quot;quality&quot;,&quot;high&quot;);<br />
+so.addParam(&quot;salign&quot;,&quot;lt&quot;);<br />
+so.addVariable(&quot;<strong>CuPlayerSetFile</strong>&quot;,&quot;CuPlayerSetFile.xml&quot;); //播放器配置文件地址,例SetFile.xml、SetFile.asp、SetFile.php、SetFile.aspx<br />
+so.write(&quot;<strong>CuPlayer</strong>&quot;);<br />
+&lt;/script&gt;<br />
+      &lt;!-- 我爱播放器(52player.com)/代码结束 --&gt;</p>
+  </fieldset>
+</div> 
+<!--line-->
+<div style="margin-top:30px;">
+  <fieldset>
+    <h4>播放器使用示例3 ( <strong><span ><a href="demo3.html" class="cBlue2">demo3.html</a></span></strong> ) <br />
+      <span class="green">说明：读取HTML参数 + 读取配置文件中的参数</span><br />
+    </h4>
+    <p class="code">&lt;!-- 我爱播放器(52player.com)/代码开始 --&gt;<br />
+      &lt;script type=&quot;text/javascript&quot; src=&quot;<strong>images/swfobject.js</strong>&quot;&gt;&lt;/script&gt;<br />
+      &lt;div class=&quot;video&quot; id=&quot;<strong>CuPlayer</strong>&quot;&gt;<br />
+&lt;strong&gt;我爱播放器(52player.com) 提示：您的Flash Player版本过低，请&lt;a href=&quot;http://www.52player.com/&quot;&gt;点此进行网页播放器升级&lt;/a&gt;！&lt;/strong&gt;&lt;/div&gt;<br />
+&lt;script type=&quot;text/javascript&quot;&gt;<br />
+var so = new SWFObject(&quot;<strong>CuPlayerMiniV4.swf</strong>&quot;,&quot;CuPlayerV4&quot;,&quot;600&quot;,&quot;410&quot;,&quot;9&quot;,&quot;#000000&quot;);<br />
+so.addParam(&quot;allowfullscreen&quot;,&quot;true&quot;);<br />
+so.addParam(&quot;allowscriptaccess&quot;,&quot;always&quot;);<br />
+so.addParam(&quot;wmode&quot;,&quot;opaque&quot;);<br />
+so.addParam(&quot;quality&quot;,&quot;high&quot;);<br />
+so.addParam(&quot;salign&quot;,&quot;lt&quot;);<br />
+so.addVariable(&quot;<strong>CuPlayerSetFile</strong>&quot;,&quot;CuPlayerSetFile.xml&quot;); //播放器配置文件地址,例SetFile.xml、SetFile.asp、SetFile.php、SetFile.aspx<br />
+so.addVariable(&quot;<strong>CuPlayerFile</strong>&quot;,&quot;test.mp4&quot;); //视频文件地址<br />
+so.addVariable(&quot;<strong>CuPlayerImage</strong>&quot;,&quot;images/start.jpg&quot;);//视频略缩图,本图片文件必须正确<br />
+so.addVariable(&quot;<strong>CuPlayerAutoPlay</strong>&quot;,&quot;yes&quot;); //是否自动播放<br />
+so.write(&quot;<strong>CuPlayer</strong>&quot;);<br />
+&lt;/script&gt;<br />
+      &lt;!-- 我爱播放器(52player.com)/代码结束 --&gt;</p>
+  </fieldset>
+</div> 
+<!--line-->
+<div style="margin-top:30px;">
+  <fieldset>
+    <h4>播放器使用示例4 ( <strong><span ><a href="demo3.html" class="cBlue2">demo4.html</a></span></strong> ) <br />
+      <span class="green">说明：处理视频结束getNext函数(实现列表连播)</span><br />
+    </h4>
+    <p class="code">&lt;script type=&quot;text/javascript&quot;&gt;<br />
+      //例子1,视频播放结束后，跳转到指定页面,getNext函数内容，用户可以自已写<br />
+function <strong>getNext</strong> (pars){ <br />
+location.href=&quot;http://www.89525.net/player/CuSunPlayerV2/&quot; ;<br />
+}<br />
+&lt;/script&gt;<br />
+&lt;!-- 我爱播放器(52player.com)/代码开始 --&gt;<br />
+      &lt;script type=&quot;text/javascript&quot; src=&quot;<strong>images/swfobject.js</strong>&quot;&gt;&lt;/script&gt;<br />
+      &lt;div class=&quot;video&quot; id=&quot;<strong>CuPlayer</strong>&quot;&gt;<br />
+&lt;strong&gt;我爱播放器(52player.com) 提示：您的Flash Player版本过低，请&lt;a href=&quot;http://www.52player.com/&quot;&gt;点此进行网页播放器升级&lt;/a&gt;！&lt;/strong&gt;&lt;/div&gt;<br />
+&lt;script type=&quot;text/javascript&quot;&gt;<br />
+var so = new SWFObject(&quot;<strong>CuPlayerMiniV4.swf</strong>&quot;,&quot;CuPlayerV4&quot;,&quot;600&quot;,&quot;410&quot;,&quot;9&quot;,&quot;#000000&quot;);<br />
+so.addParam(&quot;allowfullscreen&quot;,&quot;true&quot;);<br />
+so.addParam(&quot;allowscriptaccess&quot;,&quot;always&quot;);<br />
+so.addParam(&quot;wmode&quot;,&quot;opaque&quot;);<br />
+so.addParam(&quot;quality&quot;,&quot;high&quot;);<br />
+so.addParam(&quot;salign&quot;,&quot;lt&quot;);<br />
+so.addVariable(&quot;<strong>CuPlayerSetFile</strong>&quot;,&quot;CuPlayerSetFile.xml&quot;); //播放器配置文件地址,例SetFile.xml、SetFile.asp、SetFile.php、SetFile.aspx<br />
+so.addVariable(&quot;<strong>CuPlayerFile</strong>&quot;,&quot;test.mp4&quot;); //视频文件地址<br />
+so.addVariable(&quot;<strong>CuPlayerImage</strong>&quot;,&quot;images/start.jpg&quot;);//视频略缩图,本图片文件必须正确<br />
+so.addVariable(&quot;<strong>CuPlayerAutoPlay</strong>&quot;,&quot;yes&quot;); //是否自动播放<br />
+so.write(&quot;<strong>CuPlayer</strong>&quot;);<br />
+&lt;/script&gt;<br />
+      &lt;!-- 我爱播放器(52player.com)/代码结束 --&gt;</p>
+  </fieldset>
+</div> 
+<!--line-->
+<div style="margin-top:30px;">
+  <fieldset>
+<legend><h4>播放器下载</h4></legend>
+<p><ul class="downurllist">
+<li class="demo"><a href="http://www.52player.com/Demos/CuPlayerMiniV4/" target="_blank">官方演示</a></li>
+<li><a href="http://www.52player.com/plus/download.php?open=2&id=21&uhash=5b08f48dfa540897cac0cfa0" target="_blank">官方下载</a></li>
+</ul>
+</p>
+</fieldset>
+</div>
+
+
+
+
+
+</div>
+<!--maincontent/end-->
+
+
+
+
+<div id="footer" class="clearfix">
+
+<div class="copyright">2010-2013(C) <strong><a href="http://www.52player.com/" target="_blank" title="我爱播放器" class="cRed">www.52player.com</a></strong> 我爱播放器 Powered by <strong>iWebPlayer</strong> Center  </div>
+<div style="display:none;">
+			<script src="http://s20.cnzz.com/stat.php?id=3992412&web_id=3992412&show=pic" 
+			language="JavaScript"></script>
+  </div>
+  </div>
+</div>
+</body>
+</html>

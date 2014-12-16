@@ -34,7 +34,8 @@ class Vf_Mongodb {
 		$this->dbname = $option['dbname'];
 		unset($option['dbname']);
 
-		$option = array_merge($option, $config['option']);
+        $option = array_merge($option, $config['option']);
+        
 		try{
 			$this->mondb = new Mongo($dnsStr, $option);
 			$this->dbLink = $this->mondb->selectDB($this->dbname);
@@ -91,8 +92,13 @@ class Vf_Mongodb {
 	}
 
 
-
-
+    public function insert($tablename, $data){
+        return $this->collection($tablename)->insert($data); 
+    }
+    
+    public function update($tablename, $query, $data, $upsert = false){
+       return $this->collection($tablename)->update($query, $data, array('upsert' => $upsert)); 
+    }
 
 
 	/*

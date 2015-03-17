@@ -1,4 +1,6 @@
 <?php
+
+// 
 include "./core/simple_html_dom.class.php";
 
 $url = "http://sports.sohu.com/zhongchao.shtml";

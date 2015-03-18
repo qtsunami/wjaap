@@ -1,5 +1,7 @@
 <?php
 
+// Cwygh
+
 $temp = "images/5344e43e625f894f070152ba.png";
 $info = include 'core/Phpqrcode/qrlib.php';
 

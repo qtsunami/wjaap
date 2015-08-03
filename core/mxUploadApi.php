@@ -84,7 +84,7 @@ $allowMaxSize  = 1024*1024*2;
 $ApiUrl    = 'http://www.example.com/upload.php';
 //图片地址
 $urlArray  = array(
-'http://n1.p.imoxiu.com'
+    'http://n1.example.com'
 );
 
 //当上传文件为空时则返回

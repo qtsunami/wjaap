@@ -12,3 +12,6 @@ $res = $html->find("div#turnIDB div.turn");
 echo $res[0]->outertext;
 # 射手榜
 echo $res[1]->outertext;
+
+
+echo $res[1];

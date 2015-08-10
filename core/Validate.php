@@ -49,6 +49,21 @@ class Validate {
 
         return (!preg_match('/<[ \t\n]*script/ims', $html) && !preg_match('/(' . $events . ')[ \t\n]*=/ims', $html) && !preg_match('/.*script\:/ims', $html) && !preg_match('/<[ \t\n]*i?frame/ims', $html));
     }
+	
+	/**
+	 * 验证邮箱地址是否有效
+	 * @param String $email
+	 * @return bool
+	 */
+	public static function isValidEmail ($email) {
+		$check = false;
+		if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+			$check = true;
+		}
+		return $check;
+	}
+
+
 
 }
 

@@ -222,6 +222,133 @@ Class String {
         return sprintf("%0" . strlen($max) . "d", mt_rand($min, $max)); 
     }
 
+	/**
+	 * 获取用户的真实IP
+	 * 
+	 * @return string
+	 */
+	public static function getRealAddr () {
+		if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+			$ip = $_SERVER['HTTP_CLIENT_IP'];
+		} elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+			$ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+		} else {
+			$ip = $_SERVER['REMOTE_ADDR'];
+		}
+		return $ip;
+	}
+
+	/**
+	 * 阻止SQL注入
+	 * @param string $input
+	 * @return string
+	 */
+	public static function clean ($input) {
+		if (is_array($input)) {
+			foreach ($input as $key => $val) {
+				$output[$key] = self::clean($val);
+			}
+		} else {
+			$output = (string) $input;
+			if (get_magic_quotes_gpc()) {
+				$output = stripslashes($output);
+			}
+			$output = htmlentities($output, ENT_QUOTES, 'UTF-8');
+		}
+		return $output;
+	}
+
+	/**
+	 * 检测用户位置
+	 * @param string $ip
+	 * @return string
+	 */
+	public static function detectCity ($ip) {
+		$default = "UNKNOWN";
+		$curlopt_useraget = "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.2) Gecko/20100115 Firefox/3.6 (.NET CLR 3.5.30729)";
+		
+		$url = "http://ipinfodb.com/ip_locator.php?ip=" . urlencode($ip);
+		$ch = curl_init();
+
+		$curl_opt = array(
+			CURLOPT_FOLLOWLOCATION  => 1,
+			CURLOPT_HEADER			=> 0,
+			CURLOPT_RETURNTRANSFER  => 1,
+			CURLOPT_USERAGENT		=> $curlopt_useragent,
+			CURLOPT_URL				=> $url,
+			CURLOPT_TIMEOUT			=> 1,
+			CURLOPT_REFERER			=> 'http://' . $_SERVER['HTTP_HOST'],
+		);
+
+		curl_setopt_array($ch, $curl_opt);
+
+		$content = curl_exce($ch);
+		
+		if (!is_null($curl_info)) {
+			$curl_info = curl_getinfo($ch);
+		}
+
+		curl_close();
+
+		if (preg_match('{<li>City : ([^<]*)</li>}i', $content, $regs)) {
+			$city = $regs[1];
+		}
+
+		if (preg_match('{<li>State/Province : ([^<]*)</li>}i', $content, $regs)) {
+			$state = $regs[1];
+		}
+
+		if ($city != '' && $state != '') {
+			$location = $city . ',' . $state;
+			return $location;
+		} else {
+			return $default;
+		}
+
+	}
+
+	/**
+	 * 获取Web页面源代码
+	 * @param string $url
+	 * @return string
+	 */
+	public static function displaySourceCode ($url) {
+		$lines = file($url);
+		$output = "";
+
+		foreach ($lines as $line_num => $line) {
+			$output .= "Line #<b>{$line_num}</b> : " . htmlspecialchars($line) . "<br>\n";
+		}
+
+		return $output;
+	}
+
+	/*
+	 * 确定任意图片的主导颜色
+	 * @param string $url
+	 * @return string
+	 */
+	public static function dominantColor ($image) {
+		$color = array();
+		$i = imagecreatefromjpeg($image);
+		for ($x=0;$x<imagesx($i);$x++) {
+			for ($y=0;$y<imagesy($i);$y++) {
+				$rgb = imagecolorat($i,$x,$y);
+				$r   = ($rgb >> 16) & 0xFF;
+				$g   = ($rgb >>  & 0xFF;
+				$b   = $rgb & 0xFF;
+				$rTotal += $r;
+				$gTotal += $g;
+				$bTotal += $b;
+				$total++;
+			}
+		}
+		$color['r'] = round($rTotal/$total);
+		$color['g'] = round($gTotal/$total);
+		$color['b'] = round($bTotal/$total);
+		return $color;
+	}
+
 
 
 

@@ -350,8 +350,90 @@ Class String {
 	}
 
 
+	/*
+	 * 解压文件
+	 * 
+	 * @return string
+	 */
+	public static function unzip ($location, $newLocation) {
+		if(exec("unzip $location",$arr)){
+			mkdir($newLocation);
+			for($i = 1;$i< count($arr);$i++){
+				$file = trim(preg_replace("~inflating: ~","",$arr[$i]));
+				copy($location.'/'.$file,$newLocation.'/'.$file);
+				unlink($location.'/'.$file);
+			}
+			return TRUE;
+		}else{
+			return FALSE;
+		}
+	}
+
+	/*
+	 * 目录清单
+	 * 
+	 * @return string
+	 */
+	public static function listFiles ($dir) {
+		if (is_dir($dir)) {
+			if ($handle = opendir($dir)) {
+				while (($file = readdir($handle)) !== false) {
+					if ($file != "." && $file != ".." && $file != "Thumbs.db") {
+						echo '<a target="_blank" href="' . $dir . $file . '">' . $file . '</a><br />' . PHP_EOL;
+					}
+				}
+				closedir($handle);
+			}
+		}
+	}
 
 
+	/*
+	 * 检测用户语言
+	 * 
+	 * @return string
+	 */
+	public static function getClientLanguage ($availableLanguages, $default = 'en') {
+		if (isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
+			$langs = explode(',', $_SERVER['HTTP_ACCEPT_LANGUAGE']);
+			foreach ($langs as $value) {
+				$choice = substr($value, 0, 2);
+				if (in_array($choice, $availableLanguages)) {
+					return $choice;
+				}
+			}
+		}
+		return $default;
+	}
+
+
+	/*
+	 * 获取当前页面的URL
+	 * 
+	 * @return string
+	 */
+	public static function currentURL () {
+		$url = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+		$valid_url = str_replace("&", "&amp;", $url);
+		return $avlid_url;
+	}
+
+
+	/**
+	 * 使用tinyurl 生成短网址
+	 *
+	 * @return string
+	 */
+	public static function getTinyUrl ($url) {
+		$ch = curl_init();
+		$timeout = 5;
+		curl_setopt($ch, CURL_OPT_URL, 'http://tinyurl.com/api-create.php?url='.$url);
+		curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);  
+		curl_setopt($ch,CURLOPT_CONNECTTIMEOUT,$timeout);  
+		$data = curl_exec($ch);  
+		curl_close($ch);  
+		return $data;  
+	}
 
 
 

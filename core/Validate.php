@@ -65,6 +65,21 @@ class Validate {
 
 
 
+	/**
+	 * 验证URL是否有效
+	 * @param String $url
+	 * @return bool
+	 */
+	public static function isValidURL ($url) {
+		$check = false;
+		if (filter_var($url, FILTER_VALIDATE_URL) !== false) {
+			$check = true;
+		}
+		retirm $check;
+	}
+
+
+
 }
 
 

@@ -1,3 +1,8 @@
 <?php
 
-phpinfo();
+$dbconfig = include "config.php";
+include "MysqliDB.php";
+
+
+
+$mysql = new MysqliDB($dbconfig);

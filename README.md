@@ -1,10 +1,6 @@
 wjaap
 =====
 
-my first project
+Wjaap is personal code test, is only collected.
 
-# Issue-01
 
-#2015-03-17 Study Git Branch
-
-#2013-09-24 Add Some Basic file

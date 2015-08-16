@@ -436,6 +436,17 @@ Class String {
 	}
 
 
+    /**
+     * [repeat 重复string字符串count次]
+     * @param  [type]  $string [description]
+     * @param  integer $count  [description]
+     * @return [type]          [description]
+     */
+    public static function repeat ($string = null, $count = 5) {
+        return str_repeat($string, $count);
+    }
+
+
 
 
 

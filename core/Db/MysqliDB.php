@@ -13,14 +13,30 @@ class MysqliDb {
 	const PREFIX;
 	const CHARSET;
 
+	public $mysqli = null;
+
 	public function __construct ($dbconfig = array()) {
 		self::_parseConfig($dbconfig);
+		$this->connect();
 	
 	}
 
-
+	/**
+	 * [connect description]
+	 * @return [type] [description]
+	 */
 	private function connect () {
-	
+		// mysqli_connect(self::HOST, self::USERNAME, self::PASSWD, self::DBNAME, self::PORT, self::SOCKET);
+		try {
+			$this->mysqli = new Mysqli(self::HOST, self::USERNAME, self::PASSWD, self::DBNAME, self::PORT, self::SOCKET)
+			if ($this->mysqli->connect_error) {
+				throw new Exception($this->mysqli->connect_error, $this->mysqli->connect_no);
+				
+			}
+		} catch (Exception $e) {
+			return $e->getCode();
+		}
+		
 	}
 
 

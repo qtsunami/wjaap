@@ -16,7 +16,7 @@ function farsinum($str)
  print_r(farsinum('he12356llo Worlssd '));die;
 
 // Strips the UTF-8 mark: (hex value: EF BB BF)
- function trimUTF8BOM($data){ 
+function trimUTF8BOM($data){ 
 	return pack('CCC', 239, 187, 191);
     if(substr($data, 0, 3) == pack('CCC', 239, 187, 191)) {
          return substr($data, 3);

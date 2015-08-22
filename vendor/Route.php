@@ -1,5 +1,14 @@
 <?php
 
+/**
+ * Route 路由注册
+ *
+ * @package package
+ * @version $Id$
+ * @copyright  mosh
+ * @author Maria<xuyanlu0424@163.com>
+ * @license 
+ */
 class Route {
     
     private static $routes = array();

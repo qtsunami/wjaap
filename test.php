@@ -13,15 +13,15 @@ function farsinum($str)
    return $ret;
  } 
 
- print_r(farsinum('he12356llo Worlssd '));die;
+print_r(farsinum('he12356llo Worlssd '));die;
 
 // Strips the UTF-8 mark: (hex value: EF BB BF)
 function trimUTF8BOM($data){ 
 	return pack('CCC', 239, 187, 191);
     if(substr($data, 0, 3) == pack('CCC', 239, 187, 191)) {
-         return substr($data, 3);
-     }
-     return $data;
+        return substr($data, 3);
+    }
+    return $data;
  }
 
 
@@ -32,37 +32,24 @@ function microtime_float(){
 	list($usec, $sec) = explode(" ", microtime());
 	return ((float)$usec + (float)$sec);
 }
-    $time_start = microtime_float();
+$time_start = microtime_float();
 
 die;
 //IP
 
-if (@$HTTP_SERVER_VARS["HTTP_X_FORWARDED_FOR"])
-{
+if (@$HTTP_SERVER_VARS["HTTP_X_FORWARDED_FOR"]) {
 	$ip = $HTTP_SERVER_VARS["HTTP_X_FORWARDED_FOR"];
-}
-elseif (@$HTTP_SERVER_VARS["HTTP_CLIENT_IP"])
-{
+} elseif (@$HTTP_SERVER_VARS["HTTP_CLIENT_IP"]) {
 	$ip = $HTTP_SERVER_VARS["HTTP_CLIENT_IP"];
-}
-elseif (@$HTTP_SERVER_VARS["REMOTE_ADDR"])
-{
+} elseif (@$HTTP_SERVER_VARS["REMOTE_ADDR"]) {
 	$ip = $HTTP_SERVER_VARS["REMOTE_ADDR"];
-}
-elseif (getenv("HTTP_X_FORWARDED_FOR"))
-{
+} elseif (getenv("HTTP_X_FORWARDED_FOR")) {
 	$ip = getenv("HTTP_X_FORWARDED_FOR");
-}
-elseif (getenv("HTTP_CLIENT_IP"))
-{
+} elseif (getenv("HTTP_CLIENT_IP")) {
 	$ip = getenv("HTTP_CLIENT_IP");
-}
-elseif (getenv("REMOTE_ADDR"))
-{
+} elseif (getenv("REMOTE_ADDR")) {
 	$ip = getenv("REMOTE_ADDR");
-}
-else
-{
+} else {
 	$ip = "Unknown";
 }
 

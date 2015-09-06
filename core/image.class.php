@@ -1,7 +1,7 @@
 <?php
 class imageSet {
 	//验证码
-	public function  verity($len = 4,$type = 'ALL') {
+	public function verity($len = 4,$type = 'ALL') {
 		$im = imagecreatetruecolor(80,30);
 		$bgcolor = imagecolorallocate($im,192,192,192);
 		imagefill($im,0,0,$bgcolor);
@@ -26,7 +26,7 @@ class imageSet {
 		imagepng($im);
 	}
 	//图像缩略
-	public function  imageSave($source_path,$save_width,$save_height,$save_path = null) {
+	public function imageSave($source_path,$save_width,$save_height,$save_path = null) {
 		$source_info = getimagesize($source_path);
 		$source = $this->imageSize($source_info,$source_path);
 		$source_file = $source['src_createfunc']($source_path);
@@ -48,7 +48,7 @@ class imageSet {
 		}
 	}
 	//文字水印 ????????????? 文字水印的位置
-	public function  textWater($image_path,$fontfile='simkai.ttf',$txt) {
+	public function textWater($image_path,$fontfile='simkai.ttf',$txt) {
 		$source_info = getimagesize($image_path);
 		$imageform = $this->imageSize($source_info,$image_path);
 		$image = $imageform['src_createfunc']($image_path);
@@ -60,7 +60,7 @@ class imageSet {
 		$imageform['src_loadfunc']($image);
 	}
 	//图像水印
-	public function  imageWater($image_path,$water_path,$topath = null,$position) {
+	public function imageWater($image_path,$water_path,$topath = null,$position) {
 		
 		$im = imagecreatetruecolor(308,256);
 
@@ -85,7 +85,7 @@ class imageSet {
 			$big['src_loadfunc']($big_image,$topath);
 		}
 	}
-	function  imageSize($type,$source_path) {
+	public function imageSize($type,$source_path) {
 		switch($type['mime']) {
 		case 'image/jpeg':
 			$src_createfunc = 'imagecreatefromjpeg';
@@ -105,7 +105,7 @@ class imageSet {
 		return array('src_createfunc' => $src_createfunc,
 							'src_loadfunc' => $src_loadfunc);
 	}
-	function  position($big_im,$small_im,$position = 1) {
+	public function position($big_im,$small_im,$position = 1) {
 		switch($position) {
 			case 1:
 				$dst_x = 5;

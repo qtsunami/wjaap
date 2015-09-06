@@ -13,6 +13,14 @@ class Page {
 	public function pageSheet($each_disNum, $count, $current_page, $each_dispage, $page_link, $type){
 		$this->each_disNum = intval($each_disNum);
 	}
+
+
+    public function currentPage () {
+
+
+    }
+
+
 }
 
 

@@ -4,7 +4,7 @@ header("Content-type:text/html;charset=utf-8");
 
 include "./EngineX/EngineX.class.php";
 $simple = new EngineX();
-$simple->caching = true;
+// $simple->caching = true;
 
 //定义变量
 

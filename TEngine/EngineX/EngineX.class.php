@@ -7,6 +7,10 @@ if(!defined('APP_PATH')){
 	define('APP_PATH', dirname(__FILE__));
 }
 
+/**
+ * EngineX 简易模板引擎
+ *
+ */
 Class EngineX {
 	//模板文件
 	public $template_dir = 'templates';
@@ -24,7 +28,9 @@ Class EngineX {
 		$this->_checkDir();
 	}
 	
-	
+	/**
+	 * @var assign 页面赋值
+	 */	
 	public function assign($tpl_var, $var = null){
 		if(isset($tpl_var) && !empty($tpl_var)){
 			$this->_tpl_var[$tpl_var] = $var;
@@ -33,7 +39,9 @@ Class EngineX {
 		}
 	}
 	
-	
+	/**
+	 * @var 显示页面
+	 */	
 	public function display($file){
 		$tpl_file = $this->template_dir . DS . $file;
 

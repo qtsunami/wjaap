@@ -10,7 +10,7 @@ die;
 
 echo "<pre>";
 $pattern = '/[\x{4e00}-\x{9fa5}]+/u'; 
-$data = readExcel('', 'CMlauncher反馈.xlsx');
+$data = readExcel('', 'import.xlsx');
 foreach($data as $v){
     if(!preg_match($pattern, $v[0])){
         $newData[] = youdao($v[0], 'en|zh-cn');        

@@ -1,0 +1,384 @@
+<?php
+namespace library\Rest\lib;
+
+use library\Rest\util\Util;
+use library\Rest\RestException;
+
+class Request {
+    
+    private $request_vars;
+    private $data;
+    private $http_accept;
+    private $method;
+
+    const METHOD_HEAD = 'HEAD';
+    const METHOD_GET = 'GET';
+    const METHOD_POST = 'POST';
+    const METHOD_PUT = 'PUT';
+    const METHOD_PATCH = 'PATCH';
+    const METHOD_DELETE = 'DELETE';
+    const METHOD_OPTIONS = 'OPTIONS';
+    const METHOD_OVERRIDE = '_METHOD';
+
+
+    protected static $formDataMediaTypes = array('application/x-www-form-urlencoded');
+
+    protected $env;
+
+    /**
+     * Custom parameters
+     *
+     * @var library\Rest\lib\Parameter
+     *
+     * @api
+     */
+    public $attributes;
+
+    /**
+     * Request body parameters ($_POST)
+     *
+     * @var library\Rest\lib\Parameter
+     *
+     * @api
+     */
+    public $request;
+
+    /**
+     * Query string parameters ($_GET)
+     *
+     * @var library\Rest\lib\Parameter
+     *
+     * @api
+     */
+    public $query;
+
+    /**
+     * Server and execution environment parameters ($_SERVER)
+     *
+     * @var library\Rest\lib\Parameter
+     *
+     * @api
+     */
+    public $server;
+
+    /**
+     * Uploaded files ($_FILES)
+     *
+     * @var library\Rest\lib\Parameter
+     *
+     * @api
+     */
+    public $files;
+
+    /**
+     * Cookies ($_COOKIE)
+     *
+     * @var library\Rest\lib\Parameter
+     *
+     * @api
+     */
+    public $cookies;
+
+    /**
+     * Headers (taken from the $_SERVER)
+     *
+     * @var library\Rest\lib\Parameter
+     *
+     * @api
+     */
+    public $headers;
+
+    /**
+     * @var string
+     */
+    protected $format;
+
+    /**
+     * @var array
+     */
+    protected static $formats;
+
+
+
+    /**
+     * Constructor.
+     *
+     * @param array  $query      The GET parameters
+     * @param array  $request    The POST parameters
+     * @param array  $attributes The request attributes (parameters parsed from the PATH_INFO, ...)
+     * @param array  $cookies    The COOKIE parameters
+     * @param array  $files      The FILES parameters
+     * @param array  $server     The SERVER parameters
+     * @param string $content    The raw body data
+     *
+     * @api
+     */
+    public function __construct(array $query = array(), array $request = array(), array $attributes = array(), array $cookies = array(), array $files = array(), array $server = array(), $content = null)
+    {
+        $this->initialize($query, $request, $attributes, $cookies, $files, $server, $content);
+    }
+    
+
+    /**
+     * Sets the parameters for this request.
+     *
+     * This method also re-initializes all properties.
+     *
+     * @param array  $query      The GET parameters
+     * @param array  $request    The POST parameters
+     * @param array  $attributes The request attributes (parameters parsed from the PATH_INFO, ...)
+     * @param array  $cookies    The COOKIE parameters
+     * @param array  $files      The FILES parameters
+     * @param array  $server     The SERVER parameters
+     * @param string $content    The raw body data
+     *
+     * @api
+     */
+    public function initialize(array $query = array(), array $request = array(), array $attributes = array(), array $cookies = array(), array $files = array(), array $server = array(), $content = null)
+    {
+        $this->request = new Parameter($request);
+        $this->query = new Parameter($query);
+        $this->attributes = new Parameter($attributes);
+        $this->cookies = new Parameter($cookies);
+        // $this->files = new File($files);
+        $this->server = new Server($server);
+        $this->headers = new Headers($this->server->getHeaders());
+
+        $this->content = $content;
+    }
+
+
+
+
+    public function __clone()
+    {
+        $this->query      = clone $this->query;
+        $this->request    = clone $this->request;
+        $this->attributes = clone $this->attributes;
+        $this->cookies    = clone $this->cookies;
+        $this->files      = clone $this->files;
+        $this->server     = clone $this->server;
+        $this->headers    = clone $this->headers;
+    }
+
+    /**
+     * Sets the request method.
+     *
+     * @param string $method
+     *
+     * @api
+     */
+    public function setMethod($method)
+    {
+        $this->method = null;
+        $this->server->set('REQUEST_METHOD', $method);
+    }
+
+    /**
+     * [getMethod description]
+     * @return [type] [description]
+     */
+    public function getMethod()
+    {
+        if (null === $this->method) {
+            $this->method = strtoupper($this->server->get('REQUEST_METHOD', 'GET'));
+
+            if ('POST' === $this->method) {
+                if ($method = $this->headers->get('X-HTTP-METHOD-OVERRIDE')) {
+                    $this->method = strtoupper($method);
+                } elseif (self::$httpMethodParameterOverride) {
+                    $this->method = strtoupper($this->request->get('_method', $this->query->get('_method', 'POST')));
+                }
+            }
+        }
+
+        return $this->method;
+    }
+
+    /**
+     * Gets the "real" request method.
+     *
+     * @return string The request method
+     *
+     * @see getMethod
+     */
+    public function getRealMethod()
+    {
+        return strtoupper($this->server->get('REQUEST_METHOD', 'GET'));
+    }
+
+     /**
+     * Gets the mime type associated with the format.
+     *
+     * @param string $format The format
+     *
+     * @return string The associated mime type (null if not found)
+     *
+     * @api
+     */
+    public function getMimeType($format)
+    {
+        if (null === static::$formats) {
+            static::initializeFormats();
+        }
+
+        return isset(static::$formats[$format]) ? static::$formats[$format][0] : null;
+    }
+
+    /**
+     * Gets the format associated with the mime type.
+     *
+     * @param string $mimeType The associated mime type
+     *
+     * @return string|null The format (null if not found)
+     *
+     * @api
+     */
+    public function getFormat($mimeType)
+    {
+        if (false !== $pos = strpos($mimeType, ';')) {
+            $mimeType = substr($mimeType, 0, $pos);
+        }
+
+        if (null === static::$formats) {
+            static::initializeFormats();
+        }
+
+        foreach (static::$formats as $format => $mimeTypes) {
+            if (in_array($mimeType, (array) $mimeTypes)) {
+                return $format;
+            }
+        }
+    }
+
+    /**
+     * Associates a format with mime types.
+     *
+     * @param string       $format    The format
+     * @param string|array $mimeTypes The associated mime types (the preferred one must be the first as it will be used as the content type)
+     *
+     * @api
+     */
+    public function setFormat($format, $mimeTypes)
+    {
+        if (null === static::$formats) {
+            static::initializeFormats();
+        }
+
+        static::$formats[$format] = is_array($mimeTypes) ? $mimeTypes : array($mimeTypes);
+    }
+
+    /**
+     * Checks if the request method is of specified type.
+     *
+     * @param string $method Uppercase request method (GET, POST etc).
+     *
+     * @return bool
+     */
+    public function isMethod ($method)
+    {
+        return $this->getMethod() === strtoupper($method);
+    }
+
+    /**
+     * Checks whether the method is safe or not.
+     * GET HEAD 是安全且幂等的函数
+     * @return bool
+     *
+     * @api
+     */
+    public function isMethodSafe()
+    {
+        return in_array($this->getMethod(), array('GET', 'HEAD'));
+    }
+
+    /**
+     * Returns the request body content.
+     *
+     * @param bool    $asResource If true, a resource will be returned
+     *
+     * @return string|resource The request body content or a resource to read the body stream.
+     *
+     * @throws \LogicException
+     */
+    public function getContent($asResource = false)
+    {
+        if (false === $this->content || (true === $asResource && null !== $this->content)) {
+            throw new \LogicException('getContent() can only be called once when using the resource return type.');
+        }
+
+        if (true === $asResource) {
+            $this->content = false;
+
+            return fopen('php://input', 'rb');
+        }
+
+        if (null === $this->content) {
+            $this->content = file_get_contents('php://input');
+        }
+
+        return $this->content;
+    }
+
+    /**
+     * [getHeaders 获取Header头]
+     * @return [type] [description]
+     */
+    public function getHeaders()
+    {
+        return $this->headers->all();
+    }
+
+    /**
+     * [getPost $_POST 数据]
+     * @return [type] [description]
+     */
+    public function getPost()
+    {
+        if ($this->isMethod('PUT')) {
+            if (function_exists('mb_parse_str')) {
+                mb_parse_str($this->getContent(), $data);
+            } else {
+                parse_str($this->getContent(), $data);
+            }
+            $this->request = new Parameter($data);
+        }
+        return $this->request->all();
+    }
+
+    public function getQuery()
+    {
+        return $this->query->all();
+    }
+
+    public function getServer()
+    {
+        return $this->server->all();
+    }
+
+    /**
+     * Initializes HTTP request formats.
+     */
+    protected static function initializeFormats()
+    {
+        static::$formats = array(
+            'html' => array('text/html', 'application/xhtml+xml'),
+            'txt'  => array('text/plain'),
+            'js'   => array('application/javascript', 'application/x-javascript', 'text/javascript'),
+            'css'  => array('text/css'),
+            'json' => array('application/json', 'application/x-json'),
+            'xml'  => array('text/xml', 'application/xml', 'application/x-xml'),
+            'rdf'  => array('application/rdf+xml'),
+            'atom' => array('application/atom+xml'),
+            'rss'  => array('application/rss+xml'),
+        );
+    }
+
+
+}
+
+
+
+
+
+

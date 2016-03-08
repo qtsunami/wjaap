@@ -1,5 +1,16 @@
 <?php
 header('Content-Type:text/html;charset=utf-8');
+function youdao ($text) {
+    if(empty($text))return false;
+    $text = urlencode($text);
+    //$doctype = "xml|json|jsonp";
+    $url = "http://fanyi.youdao.com/openapi.do?keyfrom=mx2014com&key=2086412533&type=data&doctype=json&version=1.1&q=" . $text;
+    $info = file_get_contents($url);
+    $info = json_decode($info);
+    $info = $info->translation;
+    return $info[0];
+}
+
 function farsinum($str)
  {
    $ret = "";

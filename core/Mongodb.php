@@ -1,5 +1,14 @@
 <?php
-
+/**
+ *
+ *	$dbm = array(
+		'host' => 'mongodb://127.0.0.1:27017,127.0.0.1:27018?dbname=tf_article',
+		'option' => array('connect'=>true, 'timeout'=>10)
+		);
+	$db = Vf_MongoDB::getInstance($dbm);
+ *	$db->update()
+ *
+ */
 class Vf_Mongodb {
    	
 	protected $mondb;
